@@ -1,0 +1,29 @@
+!!! 5
+%html
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }
+    %title Stephen Korecky
+    %link{ :href => "/stylesheets/reset.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %link{ :href => "/stylesheets/application.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %link{ :href => "/enhanced.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %script{ :type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" }
+    %script{ :type => "text/javascript", :src => "/javascripts/jribbble.js" }
+    %script{ :src => "/javascripts/application.js", :type => "text/javascript" }
+    %link{ :href => "/feed", :title => "Primary Feed", :rel => "alternate", :type => "application/atom+xml" }
+  %body
+    #wrapper
+      #header
+        %h1
+          %a{ :href => "/" } Stephen Korecky
+      #content
+        = yield
+      #footer
+        %p 
+          Copyright &copy;
+          = Time.now.strftime("%Y")
+          Stephen Korecky
+    %script{:src => "http://include.reinvigorate.net/re_.js", :type => "text/javascript"}
+    :javascript
+      try {
+      reinvigorate.track("8xn2x-sy32j9igxa");
+      } catch(err) {}
