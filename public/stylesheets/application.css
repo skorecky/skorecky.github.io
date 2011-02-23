@@ -80,7 +80,7 @@ h3 span {
 	overflow:hidden;
 }
 
-#header h1 a {
+#header h1 {
 	display:block;
 	font-size:32px;
 	font-weight:bold;
@@ -88,7 +88,7 @@ h3 span {
 	padding:10px 0 0;
 }
 
-#header h2 a {
+#header h2 {
   font-family: 'lucida grande', tahoma, sans-serif;
   text-shadow:0 1px 0 rgba(255,255,255,0.1);
 }
@@ -191,8 +191,12 @@ h3 span {
 
 #contact li {
   float:left;
-  margin:10px;
-  width:460px;
+  margin:10px 20px 10px 0;
+  width:470px;
+}
+
+#contact li:nth-child(even) {
+  margin-right:0;
 }
 
 #contact li a span {

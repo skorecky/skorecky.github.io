@@ -6,20 +6,19 @@
     <link href='/stylesheets/reset.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/stylesheets/application.css' media='screen' rel='stylesheet' type='text/css' />
     <link href='/enhanced.css' media='screen' rel='stylesheet' type='text/css' />
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js' type='text/javascript'></script>
-    <script src='/javascripts/jribbble.js' type='text/javascript'></script>
-    <script src='/javascripts/application.js' type='text/javascript'></script>
     <link href='/feed' rel='alternate' title='Primary Feed' type='application/atom+xml' />
+    <script type="text/javascript" charset="utf-8">
+      function nospam(user,domain) {
+      	var locationstring = "mailto:" + user + "@" + domain;
+      	window.location = locationstring;
+      }
+    </script>
   </head>
   <body>
     <div id='wrapper'>
       <div id='header'>
-        <h1>
-          <a href='/'>Stephen Korecky</a>
-        </h1>
-        <h2>
-          <a href="/">Chicago Designer &amp; Developer</a>
-        </h2>
+        <h1>Stephen Korecky</h1>
+        <h2>Chicago Designer &amp; Developer</h2>
       </div>
       <div id='content'>
         <h3><span>Recent Work</span></h3>
@@ -38,8 +37,8 @@
         </ul>
         <h3><span>A Little About Me</span></h3>
         <div id='about'>
-          <p>I am the CEO for my company <a href="http://fuelcollective.com">Fuel Collective</a>. There I'm responsible for Designing all of our applications, designing and developing the website, keeping the servers happy, and all the other stuff that makes a business run.</p>
-          <p>I'm currently a part of the Extended Family for the amazing people at <a href="http://obtiva.com">Obtiva</a> who have given me the chance to work at places like <a href="http://leapfrogonline.com">Leapfrog Online</a> &amp; <a href="http://groupon.com">Groupon</a>.</p>
+          <p>I am the CEO for my company <a href="http://fuelcollective.com">Fuel Collective</a>. I'm responsible for Designing our applications, designing and developing the website, keeping the servers happy, and all the other stuff that makes a business run.</p>
+          <p>I'm currently a part of the Extended Family for the amazing people at <a href="http://obtiva.com">Obtiva</a> who have given me the chance to work at awesome places like <a href="http://leapfrogonline.com">Leapfrog Online</a> &amp; <a href="http://groupon.com">Groupon</a>.</p>
           <p>
             I'm passionate about creating user interfaces that guide the user, not hinder them. I love designing applications for the most beautiful platform in the world, for users who care about how their applications look and feel. Applications should feel natural, even when using them for the first time.
           </p>
@@ -47,7 +46,7 @@
         <h3><span>Drop me a line</span></h3>
         <ul id="contact">
           <li>
-            <a href="http://github.com/skorecky"><span><img src="/images/social/email_32.png"/>Email</span></a>
+            <a href="#" onclick="javascript:nospam('stephen','gmail.com')"><span><img src="/images/social/email_32.png"/>Email</span></a>
           </li>
           <li>
             <a href="http://github.com/skorecky"><span><img src="/images/social/github_32.png"/>GitHub</span></a>
@@ -56,12 +55,15 @@
             <a href="http://twitter.com/skorecky"><span><img src="/images/social/twitter_32.png"/>Twitter</span></a>
           </li>
           <li>
-            <a href="http://vimeo.com/stephenk"><span><img src="/images/social/Vimeo_32.png"/>Vimeo</span></a>
+            <a href="http://vimeo.com/stephenk"><span><img src="/images/social/vimeo_32.png"/>Vimeo</span></a>
           </li>
         </ul>
       </div>
     </div>
     <p id='footer'>Copyright &copy; 2011 Stephen Korecky</p>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js' type='text/javascript'></script>
+    <script src='/javascripts/jribbble.js' type='text/javascript'></script>
+    <script src='/javascripts/application.js' type='text/javascript'></script>
     <script src='http://include.reinvigorate.net/re_.js' type='text/javascript'></script>
     <script type='text/javascript'>
       try {
