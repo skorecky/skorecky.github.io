@@ -1,0 +1,16 @@
+%h3 <span>Contact</span>
+%fieldset#contact
+  %section
+    %form{:action => "/contact", :method => "post"}
+      %ul
+        %li
+          %label{:for => "name"} Name
+          %input#name.required{:type => "text", :name => "name"}
+        %li
+          %label{:for => "email"} Email
+          %input#email.required.email{:type => "text", :name => "email"}
+        %li
+          %label{:for => "message"} Message
+          %textarea#message.required{:name => "message"}
+          %input#phone{:type => "text", :name => "phone", :style => "display:none;"}
+        %input{:type => "submit"}

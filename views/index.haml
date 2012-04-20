@@ -1,0 +1,42 @@
+%h3 <span>Recent Design Work</span>
+%ul#recent
+%h3 <span>Things I Know</span>
+%ul#skills
+  %li.picto{:'data-icon' => 'S'} Application Design
+  %li.picto{:'data-icon' => 'S'} HTML &amp; CSS
+  %li.picto{:'data-icon' => 'S'} JavaScript &amp; jQuery
+  %li.picto{:'data-icon' => 'S'} Server Administration
+  %li.picto{:'data-icon' => 'S'} Subversion &amp; Git
+  %li.picto{:'data-icon' => 'S'} Web Standards &amp; SEO
+  %li.picto{:'data-icon' => 'S'} Ruby on Rails
+  %li.picto{:'data-icon' => 'S'} MySQL
+  %li.picto{:'data-icon' => 'S'} Photoshop &amp; Illustrator
+%h3 <span>A Little About Me</span>
+#about
+  %p I am the CEO for my company <a href="http://fuelcollective.com">Fuel Collective</a>. I'm responsible for Designing our applications, designing and developing the website, keeping the servers happy, and all the other stuff that makes a business run. I also currently contract for <a href="http://www.coupontrade.com">CouponTrade</a>
+  %p
+    I'm passionate about creating user interfaces that guide the user, not hinder them. I love designing applications for the most beautiful platform in the world, for users who care about how their applications look and feel. Applications should feel natural, even when using them for the first time.
+%h3 <span>I make things for everyone</span>
+%ul#github
+%h3 <span>Drop me a line</span>
+%fieldset
+  %section
+    %form{:action => "/contact", :method => "post"}
+      %ul
+        %li
+          %label{:for => "name"} Name
+          %input#name.required{:type => "text", :name => "name"}
+        %li
+          %label{:for => "email"} Email
+          %input#email.required.email{:type => "text", :name => "email"}
+        %li
+          %label{:for => "message"} Message
+          %textarea#message.required{:name => "message"}
+          %input#phone{:type => "text", :name => "phone", :style => "display:none;"}
+        %input{:type => "submit", :value => "Send Me Your Message"}
+
+%ul#contact
+  %li <a href="#" onclick="javascript:nospam('skorecky','gmail.com')"><span><img src="/images/social/email_32.png"/>Email</span></a>
+  %li <a href="http://github.com/skorecky"><span><img src="/images/social/github_32.png"/>GitHub</span></a>
+  %li <a href="http://twitter.com/skorecky"><span><img src="/images/social/twitter_32.png"/>Twitter</span></a>
+  %li <a href="http://vimeo.com/stephenk"><span><img src="/images/social/vimeo_32.png"/>Vimeo</span></a>

@@ -1,4 +1,17 @@
 $(function(){
+  
+  function nospam(user,domain) {
+  	var locationstring = "mailto:" + user + "@" + domain;
+  	window.location = locationstring;
+  }
+  
+  $.getJSON("https://api.github.com/users/skorecky/repos?callback=?", function(data){
+    var repos = data.data;
+    $(repos).each(function(e,repo){
+      $("#github").append("<li><a href="+repo.html_url+"><span>"+repo.name+"</span></a></li>");
+    });
+  });
+  
   $.jribbble.getShotsByPlayerId('skorecky',
   function (playerShots)
   {
@@ -15,4 +28,9 @@ $(function(){
   },
   {page: 1, per_page: 3}
   );
+  
 });
+
+for (var i=0; i < Things.length; i++) {
+  Things[i]
+};

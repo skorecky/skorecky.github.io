@@ -1,5 +1,5 @@
 body {
-	background:#1F446B url("/images/background.jpg") 0 0 repeat-x;
+	background:#1F446B url("/images/stich.png") 0 0 repeat;
 	color:#FFF;
 	font:62.5%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -25,8 +25,8 @@ a {
 
 h3 {
 	background: #032846;
-  background: -moz-linear-gradient(top, rgba(6, 63, 109, 0.2) 0%, rgba(4, 36, 70, 0.2) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(6, 63, 109, 0.2)), color-stop(100%,rgba(4, 36, 70, 0.2)));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.2)), color-stop(100%,rgba(0, 0, 0, 0.3)));
   border:1px solid rgba(3, 19, 38, 0.5);
   border-radius:3px;
   -moz-border-radius:3px;
@@ -52,10 +52,11 @@ h3 span {
 -------------------------*/
 
 #wrapper {
-  background:rgba(0,0,0,0.1);
-  border:1px solid rgba(3, 19, 38, 0.4);
-  border-radius:3px;
-  -moz-border-radius:3px;
+  background:rgba(0,0,0,0.5) url("/images/background.jpg") 0 0 repeat;
+  border:1px solid rgba(3, 19, 38, 0.5);
+  border-radius:5px;
+  -moz-border-radius:5px;
+  box-shadow:0 0 10px rgba(0,0,0,0.5);
   margin:50px auto 0;
   width:960px;
   padding:0 50px 50px;
@@ -231,6 +232,108 @@ h3 span {
   display:inline-block;
   padding:0 10px 0 0;
   vertical-align:bottom;
+}
+
+#github {
+  overflow:hidden;
+}
+
+#github li {
+  float:left;
+  margin:0 10px 10px 0;
+  width:313px;
+}
+
+#github li:nth-child(3n+3) {
+  margin:0 0 10px 0;
+}
+
+#github li a {
+  background: #032846;
+  background: -moz-linear-gradient(top, rgba(6, 63, 109, 1) 0%, rgba(4, 36, 70, 1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(6, 63, 109, 0.5)), color-stop(100%,rgba(4, 36, 70, 0.5)));
+  border:1px solid rgba(3, 19, 38, 0.6);
+  -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1);
+  -moz-box-shadow:0 1px 0 rgba(255,255,255,0.1);
+  border-radius:3px;
+  -moz-border-radius:3px;
+  color:#FFF;
+  display:block;
+  font-family: 'lucida grande', tahoma, sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  text-shadow:-1px -1px 0 rgba(0,0,0,0.8);
+}
+
+#github li a:hover {
+  -webkit-box-shadow:0 0 10px rgba(255,255,255,0.3) inset;
+  -moz-box-shadow:0 0 10px rgba(255,255,255,0.3) inset;
+}
+
+#github li a:active {
+  background: -moz-linear-gradient(top, rgba(4, 36, 70, 0.5) 0%, rgba(6, 63, 109, 1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(4, 36, 70, 0.5)), color-stop(100%,rgba(6, 63, 109, 1)));
+  text-shadow:0 -1px 0 rgba(0,0,0,1);
+}
+
+#github li a span {
+  border-top:1px solid rgba(255,255,255,0.1);
+  border-radius:3px;
+  display:block;
+  padding:10px;
+}
+
+fieldset ul li {
+  padding:5px;
+}
+
+fieldset ul li label {
+  display:block;
+  font-size:16px;
+  text-shadow:-1px -1px 0 rgba(0,0,0,0.8);
+  vertical-align:top;
+}
+
+fieldset ul li input,
+fieldset ul li textarea {
+  background: rgba(0,0,0,0.3);
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.3) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0.3)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.3) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.3) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.3) 100%);
+  border:rgba(0,0,0,1);
+  border-radius:3px;
+  box-shadow:0 1px 0 rgba(255,255,255,0.1);
+  color:#FFF;
+  font-size:16px;
+  padding:10px;
+  width:300px;
+}
+
+fieldset ul li input:focus,
+fieldset ul li textarea:focus {
+  box-shadow:0 0 5px rgba(150,150,255,0.5);
+}
+
+fieldset input[type=submit] {
+  background: #032846;
+  background: -moz-linear-gradient(top, rgba(6, 63, 109, 1) 0%, rgba(4, 36, 70, 1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(6, 63, 109, 0.5)), color-stop(100%,rgba(4, 36, 70, 0.5)));
+  border:1px solid rgba(3, 19, 38, 0.5);
+  -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1) inset;
+  -moz-box-shadow:0 1px 0 rgba(255,255,255,0.1) inset;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  color:#FFF;
+  cursor:pointer;
+  display:block;
+  font-family: 'lucida grande', tahoma, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  padding:10px 20px;
+  text-shadow:-1px -1px 0 rgba(0,0,0,0.8);
 }
 
 #footer {
