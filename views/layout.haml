@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => 'text/html; charset=utf-8', :'http-equiv' => 'content-type'}
-    %title Stephen Korecky
+    %title Stephen Korecky | Designer &amp; Developer
     %link{:href => '/stylesheets/reset.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => '/stylesheets/application.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
   %body
@@ -12,8 +12,8 @@
         %h2 Chicago Designer &amp; Developer
       #content
         =yield
-    %p#footer Copyright &copy; 2011 Stephen Korecky
-    %script{:src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js', :type => 'text/javascript'}
+    %p#footer Copyright &copy; #{Time.now.year} Stephen Korecky
+    %script{:src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', :type => 'text/javascript'}
     %script{:src => '/javascripts/jribbble.js', :type => 'text/javascript'}
     %script{:src => '/javascripts/application.js', :type => 'text/javascript'}
     %script{:src =>'http://include.reinvigorate.net/re_.js', :type => 'text/javascript'}
