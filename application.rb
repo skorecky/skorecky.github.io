@@ -2,6 +2,8 @@ require 'sinatra'
 require 'haml'
 require 'pony'
 require 'sinatra/flash'
+require "./helpers"
+require "./keepalive"
 
 enable :sessions
 
@@ -13,21 +15,32 @@ get '/contact' do
   haml :contact
 end
 
-post '/contact' do
+post "/send_message" do
   name = params[:name]
   email = params[:email]
   message = params[:message]
   spam = params[:phone]
-  if spam != ""
+  if name == "" or email == "" or message = ""
+    redirect "/contact", flash[:error] = "Please complete for the form"
+  elsif spam == ""
     redirect "/contact", flash[:error] = "You Suck Spam!"
   else
-    Pony.mail(:to => 'rkorecky@silverlininggroup.com', :from => email, :subject => "Sales Inquery from #{name}", :body => message, :via => :smtp, :via_options => {
-      :address              => 'smtp.gmail.com',
-      :port                 => '587',
-      :enable_starttls_auto => true,
-      :user_name            => 'skorecky@gmail.com',
-      :password             => '6Ks9:I0I4-4+gSD',
-      :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
+    Pony.mail({
+      :to => 'skorecky@gmail.com',
+      :from => email,
+      :sender => email,
+      :reply_to => email,
+      :subject => "Message from #{name}",
+      :body => message,
+      :via => :smtp,
+      :via_options => {
+        :address              => 'smtp.sendgrid.net',
+        :port                 => '25',
+        :user_name            => 'app8340220@heroku.com',
+        :password             => '3suqavbj',
+        :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
+        :domain               => "stevedj.com" # the HELO domain provided by the client to the server
+      }
     })
     redirect "/contact", flash[:notice] = "Thanks! We got your email. We'll get back to you shortly!"
   end
