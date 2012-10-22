@@ -13,6 +13,45 @@ a {
 /* Wrapper
 -------------------------*/
 
+.button {
+  background: #2a457f; /* Old browsers */
+  background: -moz-linear-gradient(top, #2a457f 0%, #1f325e 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2a457f), color-stop(100%,#1f325e)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #2a457f 0%,#1f325e 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #2a457f 0%,#1f325e 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #2a457f 0%,#1f325e 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #2a457f 0%,#1f325e 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a457f', endColorstr='#1f325e',GradientType=0 ); /* IE6-9 */
+  border:1px solid #001249;
+  border-radius:2px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 0 rgba(255,255,255,1);
+  color:rgba(255,255,255,0.9);
+  cursor:pointer;
+  font-size:14px;
+  padding:5px 10px;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.5);
+}
+
+.flash {
+  color:rgba(255,255,255,0.8);
+  font-size:14px;
+  left:0;
+  padding:10px 0;
+  position:absolute;
+  right:0;
+  text-align:center;
+  text-shadow:0 1px 0 rgba(0,0,0,0.8);
+  top:0;
+}
+
+.flash.error {
+  background:red;
+}
+
+.flash.notice {
+  background:green;
+}
+
 #wrapper {
   margin:0 auto;
   width:276px;
@@ -46,7 +85,9 @@ a {
   border:10px solid rgba(255,255,255,1);
   border-radius:50%;
   box-shadow:0 0 10px 0 rgba(0,0,0,0.8);
+  position:relative;
   width:256px;
+  z-index:2;
 }
 
 #me #portrait img {
@@ -56,9 +97,10 @@ a {
 }
 
 #me #social {
-  margin:-20px auto 0;
+  margin:-100px auto 0;
   position:relative;
   width:228px;
+  z-index:1;
 }
 
 #me #social li {
@@ -103,7 +145,70 @@ a {
   color:rgba(255,255,255,1);
 }
 
+#contact {
+  background:rgba(255,255,255,0.9);
+  border-radius:5px;
+  box-shadow:0 0 10px rgba(0,0,0,0.8),inset 0 1px 0 rgba(255,255,255,1);
+  left:50%;
+  margin:0 0 0 -128px;
+  position:absolute;
+  top:-250px;
+  width:256px;
+  z-index:4;
+}
+
+#contact form {
+  display:block;
+  margin:10px;
+}
+
+#contact form label {
+  color:rgba(0,0,0,0.8);
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  padding:5px 0;
+  text-shadow:0 1px 0 rgba(255,255,255,1);
+}
+
+#contact form a {
+  color:rgba(255,50,50,0.8);
+  cursor:pointer;
+  font-size:14px;
+  text-shadow:0 1px 0 rgba(255,255,255,1);
+}
+
+#contact form input,
+#contact form textarea {
+  background:rgba(255,255,255,0.5);
+  border:none;
+  border-bottom:1px solid rgba(0,0,0,0.15);
+  border-radius:2px;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,1);
+  font-size:14px;
+  padding:5px;
+  width:226px;
+}
+
+#contact form .form-actions {
+  padding:5px 0 0;
+}
+
+.screen {
+  background:rgba(0,0,0,0.9);
+  bottom:0;
+  display:none;
+  left:0;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:3;
+}
+
 @media (max-device-width: 480px) {
+  body {
+    min-height:480px;
+  }
   #me h1 {
     margin:10px 0;
   }

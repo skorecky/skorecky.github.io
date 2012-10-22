@@ -10,7 +10,22 @@
     %link{:href => '/stylesheets/application.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
   %body
     #wrapper
+      = styled_flash
       = yield
+    .screen
+      #contact
+        %form{:action => "/send_message", :method => "post"}
+          %label Full Name
+          %input{:type => "text", :placeholder => "Your Name", :name => "name"}
+          %label Email
+          %input{:type => "email", :placeholder => "Email Address", :name => "email"}
+          %input{:type => "phone", :placeholder => "Phone", :style => "display:none;", :name => "phone"}
+          %label Message
+          %textarea{:rows => 3, :name => "message"}
+          .form-actions
+            %button.button{:type => "submit"} Send Message
+            %a{:herf => "/"} Cancel
+    %script{:src => '/javascripts/jquery.js', :type => 'text/javascript'}
     %script{:src => '/javascripts/application.js', :type => 'text/javascript'}
     %script{:src =>'http://include.reinvigorate.net/re_.js', :type => 'text/javascript'}
     :javascript

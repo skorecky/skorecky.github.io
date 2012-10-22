@@ -11,19 +11,15 @@ get '/?' do
   haml :index
 end
 
-get '/contact' do
-  haml :contact
-end
-
 post "/send_message" do
   name = params[:name]
   email = params[:email]
   message = params[:message]
   spam = params[:phone]
-  if name == "" or email == "" or message = ""
-    redirect "/contact", flash[:error] = "Please complete for the form"
-  elsif spam == ""
-    redirect "/contact", flash[:error] = "You Suck Spam!"
+  if name == "" or email == "" or message == ""
+    redirect "/", flash[:error] = "Please complete for the form"
+  elsif spam != ""
+    redirect "/", flash[:error] = "You Suck Spam!"
   else
     Pony.mail({
       :to => 'skorecky@gmail.com',
@@ -42,7 +38,7 @@ post "/send_message" do
         :domain               => "stevedj.com" # the HELO domain provided by the client to the server
       }
     })
-    redirect "/contact", flash[:notice] = "Thanks! We got your email. We'll get back to you shortly!"
+    redirect "/", flash[:notice] = "Thanks! We got your email. We'll get back to you shortly!"
   end
 end
 

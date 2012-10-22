@@ -1,16 +1,27 @@
 (function(){
   "use strict";
   
-  window.onload = function(){
-    
+  $(function(){
     window.scrollTo(0, 1);
     
-    var emailButton = document.querySelector("a[href='#email']");
-    emailButton.onclick = function(event){
+    $("a[href='#email']").click(function(event){
       event.preventDefault();
-      window.location = "mailto:"+emailButton.dataset.user+"@gmail.com";
-    }
+      console.log($(this).is(":visible"));
+      if($(this).is(":visible")){
+        $("#contact").animate({top: 50});
+        $(".screen").fadeIn(200).height(document.height);
+      } else {
+        $("#contact").animate({top: -250});
+        $(".screen").fadeOut(200);
+      }
+    });
     
-  };
+    $("form a").click(function(){
+      $("#contact").animate({top: -250});
+      $(".screen").fadeOut(200);
+    });
+    
+    $("#social").animate({margin: "-20px auto 0",'z-index': 3});
+  });
   
 })();
