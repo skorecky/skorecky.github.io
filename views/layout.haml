@@ -4,16 +4,17 @@
     %meta{:content => 'text/html; charset=utf-8', :'http-equiv' => 'content-type'}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title Stephen Korecky | Designer &amp; Developer from Chicago
-    %link{:href => '/stylesheets/reset.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
-    %link{:href => '/webfonts/ss-standard.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
-    %link{:href => '/webfonts/ss-social.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
-    %link{:href => '/stylesheets/application.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/stylesheets/reset.css', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/webfonts/ss-social.css', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/webfonts/ss-standard.css', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/stylesheets/application.css', :rel => 'stylesheet', :type => 'text/css'}
   %body
     #wrapper
       = styled_flash
       = yield
     .screen
       #contact
+        %a.ss-icon.cancel{:herf => "/"} Close
         %form{:action => "/send_message", :method => "post"}
           %label Full Name
           %input{:type => "text", :placeholder => "Your Name", :name => "name"}
@@ -23,8 +24,7 @@
           %label Message
           %textarea{:rows => 3, :name => "message"}
           .form-actions
-            %button.button{:type => "submit"} Send Message
-            %a{:herf => "/"} Cancel
+            %button.button.primary{:type => "submit"} Send Message
     %script{:src => '/javascripts/jquery.js', :type => 'text/javascript'}
     %script{:src => '/javascripts/application.js', :type => 'text/javascript'}
     %script{:src =>'http://include.reinvigorate.net/re_.js', :type => 'text/javascript'}

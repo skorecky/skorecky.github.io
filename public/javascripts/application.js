@@ -19,7 +19,7 @@
       }
     });
     
-    $("form a").click(function(){
+    $("#contact .cancel").click(function(){
       closeContact();
     });
     
