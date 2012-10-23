@@ -28,8 +28,11 @@
         closeContact();   
       }
     });
-    
-    $("#social").animate({margin: "-20px auto 0",'z-index': 3});
+    setTimeout(function(){
+      $("#social").animate({margin: "-20px auto 0"}, function(){
+        $(this).css("z-index",3);
+      });
+    },300);
   });
   
 })();
