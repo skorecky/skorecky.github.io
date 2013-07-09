@@ -14,7 +14,7 @@ a {
 -------------------------*/
 
 .button {
-  border:1px solid #111;
+  border:none;
   border-radius:25px;
   color:rgba(255,255,255,0.9);
   cursor:pointer;
@@ -25,14 +25,13 @@ a {
 }
 
 .button.primary {
-  background:none;
-  border: 1px solid #FFF;
+  background:#69C535;
   color: #FFF;
 }
 
 .button.primary:hover {
-  background: #FFF;
-  color:#333;
+  background: #539B29;
+  color:#FFF;
 }
 
 .flash {
