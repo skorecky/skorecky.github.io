@@ -2,8 +2,14 @@
   "use strict";
   
   var closeContact = function(){
-    $("#contact").animate({top: -250});
-    $(".screen").fadeOut(200);
+    $("#contact").addClass("animated hinge")
+    setTimeout(function(){
+      $("#contact").animate({top: "100%"});
+    },500);
+    setTimeout(function(){
+      $(".screen").fadeOut(200);
+      $("#contact").removeClass("animated hinge");
+    },1000);
   };
   
   $(function(){
@@ -28,11 +34,11 @@
         closeContact();   
       }
     });
+    
     setTimeout(function(){
-      $("#social").animate({margin: "-20px auto 0"}, function(){
-        $(this).css("z-index",3);
-      });
-    },300);
+      $("#social").show().addClass("animated bounceInDown")
+    },200);
+    
   });
   
 })();
