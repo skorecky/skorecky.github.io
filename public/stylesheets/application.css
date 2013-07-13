@@ -1,8 +1,17 @@
+html {
+  height:100%
+}
 body {
-  background-color:#1F325E;
-	background-image:url("/images/stich.png"), url("/images/grain.png");
+  background-color:#213E76;
+  background-image: -ms-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
+  background-image: -moz-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
+  background-image: -o-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
+  background-image: -webkit-gradient(radial, right bottom, 0, right bottom, 994, color-stop(0, #213E76), color-stop(1, #5D71AE));
+  background-image: -webkit-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
+  background-image: radial-gradient(circle farthest-corner at right bottom, #213E76 0%, #5D71AE 100%);
 	color:#FFF;
 	font:62.5%/1.5 Arial, sans-serif;
+  height:100%
 }
 
 a {
@@ -196,7 +205,7 @@ a {
 }
 
 .screen {
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.8);
   bottom:0;
   display:none;
   left:0;
