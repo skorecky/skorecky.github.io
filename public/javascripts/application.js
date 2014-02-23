@@ -2,7 +2,7 @@
   "use strict";
   
   var closeContact = function(){
-    $("#contact").addClass("animated hinge")
+    $("#contact").addClass("animated hinge");
     setTimeout(function(){
       $("#contact").animate({top: "100%"});
     },500);
@@ -36,9 +36,8 @@
     });
     
     setTimeout(function(){
-      $("#social").show().addClass("animated bounceInDown")
+      $("#social").show().addClass("animated bounceInDown");
     },200);
     
   });
-  
 })();
