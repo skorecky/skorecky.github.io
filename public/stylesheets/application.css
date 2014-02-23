@@ -2,16 +2,16 @@ html {
   height:100%
 }
 body {
-  background-color:#213E76;
-  background-image: -ms-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
-  background-image: -moz-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
-  background-image: -o-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
-  background-image: -webkit-gradient(radial, right bottom, 0, right bottom, 994, color-stop(0, #213E76), color-stop(1, #5D71AE));
-  background-image: -webkit-radial-gradient(right bottom, circle farthest-corner, #213E76 0%, #5D71AE 100%);
-  background-image: radial-gradient(circle farthest-corner at right bottom, #213E76 0%, #5D71AE 100%);
+  background-color:#2638AD;
+  background-image: -o-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
+  background-image: -moz-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
+  background-image: -webkit-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
+  background-image: -ms-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
+  background-image: linear-gradient(-135deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
 	color:#FFF;
-	font:62.5%/1.5 Arial, sans-serif;
-  height:100%
+	font:62.5%/1.5 "Helvetica Neue", Helvetica, sans-serif;
+  height:100%;
+  overflow:hidden;
 }
 
 a {
@@ -65,37 +65,38 @@ a {
 
 #wrapper {
   margin:0 auto;
-  width:276px;
+  width:320px;
   padding:0 0 50px;
 }
 
 #me {
   margin:0 auto;
-  width:276px;
+  width:320px;
 }
 
 #me h1 {
-  color:rgba(255,255,255,0.8);
-  font-size:32px;
-  font-weight:800;
+  color:rgba(255,255,255,0.9);
+  font-size:42px;
+  font-weight:100;
   line-height:1.6;
   margin:40px 0;
   text-align:center;
-  text-shadow:0 1px 0 rgba(0,0,0,0.9);
 }
 
 #me h1 small {
   color:rgba(255,255,255,0.5);
   display:block;
   font-size:12px;
+  font-weight:800;
   margin:0;
+  letter-spacing:2px;
 }
 
 #me #portrait {
   background:rgba(0,0,0,0.8);
-  border:10px solid rgba(255,255,255,1);
+  border:5px solid rgba(255,255,255,1);
   border-radius:50%;
-  box-shadow:0 1px 3px 0 rgba(0,0,0,0.8);
+  margin:0 auto;
   position:relative;
   width:256px;
   z-index:2;
