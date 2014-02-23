@@ -30,10 +30,10 @@ post '/send_message' do
       body: message,
       via: :smtp,
       via_options: {
-        address: 'smtp.sendgrid.net',
-        port: '25',
-        user_name: 'app8340220@heroku.com',
-        password: '3suqavbj',
+        address: 'smtp.mandrillapp.com',
+        port: '587',
+        user_name: 'skorecky@gmail.com',
+        password: '9AdonRwINGpp3cb5gdZwYw',
         authentication: :plain,
         domain: 'stephenkorecky.com'
       }
