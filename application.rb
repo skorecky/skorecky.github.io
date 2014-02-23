@@ -26,7 +26,7 @@ post '/send_message' do
       from: email,
       sender: email,
       reply_to: email,
-      subject: 'Message from #{name}',
+      subject: "Message from #{name}",
       body: message,
       via: :smtp,
       via_options: {
