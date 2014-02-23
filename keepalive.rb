@@ -1,6 +1,6 @@
 Thread.new do
   loop do
-    open "http://stevedj.com"
+    open "http://stephenkorecky.com"
     sleep 60
   end
 end
