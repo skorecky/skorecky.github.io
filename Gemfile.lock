@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    dalli (2.7.0)
     haml (4.0.5)
       tilt
     kgio (2.9.2)
@@ -12,6 +13,8 @@ GEM
     pony (1.8)
       mail (>= 2.0)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-protection (1.5.2)
       rack
     raindrops (0.13.0)
@@ -38,8 +41,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  dalli
   haml
   pony
+  rack-cache
   sass
   shotgun
   sinatra

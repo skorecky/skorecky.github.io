@@ -8,6 +8,8 @@ gem 'sass'
 gem 'pony'
 gem 'sinatra-flash'
 gem 'unicorn'
+gem 'dalli'
+gem 'rack-cache'
 
 group :development do
   gem 'shotgun'
