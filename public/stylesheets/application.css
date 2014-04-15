@@ -65,13 +65,12 @@ a {
 }
 
 #wrapper {
-  margin:0 auto;
-  width:320px;
-  padding:0 0 50px;
+  
 }
 
 #me {
   margin:0 auto;
+  padding:0 0 50px;
   width:320px;
 }
 
@@ -224,4 +223,41 @@ a {
   #me h1 {
     margin:10px 0;
   }
+}
+
+
+#health_dashboard {
+  margin:0 auto;
+  width:960px;
+}
+
+#health_dashboard canvas {
+}
+
+#health_dashboard #id {
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  margin:0 0 10px;
+  overflow:hidden;
+  padding:10px 0;
+}
+
+#health_dashboard #id img {
+  border:2px solid rgba(255,255,255,1);
+  border-radius:50%;
+  display:block;
+  float:left;
+  width:50px;
+}
+
+#health_dashboard #id h1 {
+  font-size:24px;
+  float:left;
+  line-height:1;
+  margin:5px 0 0 10px;
+}
+
+#health_dashboard #id h1 small {
+  display:block;
+  font-size:50%;
+  line-height:2;
 }
