@@ -10,6 +10,7 @@ gem 'sinatra-flash'
 gem 'unicorn'
 gem 'dalli'
 gem 'rack-cache'
+gem 'ruby-hmac'
 
 group :development do
   gem 'shotgun'

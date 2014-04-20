@@ -4,6 +4,7 @@
     %meta{content: 'text/html; charset=utf-8', :'http-equiv' => 'content-type'}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
     %title Stephen Korecky - Designer &amp; Developer from Chicago
+    %link{rel: "icon", type: "image/png", href: "/images/favicon.ico"}
     %link{href: '/stylesheets/reset.css', rel: 'stylesheet', type: 'text/css'}
     %link{href: '/webfonts/ss-social.css', rel: 'stylesheet', type: 'text/css'}
     %link{href: '/webfonts/ss-standard.css', rel: 'stylesheet', type: 'text/css'}
@@ -13,7 +14,7 @@
     #wrapper
       = styled_flash
       = yield
-    .screen
+    .overlay
       #contact
         %a.ss-icon.cancel{herf: "/"} Close
         %form{action: "/send_message", method: "post"}

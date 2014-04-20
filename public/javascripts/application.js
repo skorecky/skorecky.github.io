@@ -2,13 +2,14 @@
   "use strict";
   
   var closeContact = function(){
-    $("#contact").addClass("animated hinge");
+    contact = $("#contact");
+    contact.addClass("animated hinge");
     setTimeout(function(){
-      $("#contact").animate({top: "100%"});
+      contact.animate({top: "100%"});
     },500);
     setTimeout(function(){
-      $(".screen").fadeOut(200);
-      $("#contact").removeClass("animated hinge");
+      $(".overlay").fadeOut(200);
+      contact.removeClass("animated hinge");
     },1000);
   };
   
@@ -19,7 +20,7 @@
       event.preventDefault();
       if($(this).is(":visible")){
         $("#contact").animate({top: 50});
-        $(".screen").fadeIn(200).height(document.height);
+        $(".overlay").fadeIn(200).height(document.height);
       } else {
         closeContact();
       }
@@ -30,14 +31,10 @@
     });
     
     $(document).keyup(function(event){
-      if(event.which === 27 && $(".screen").is(":visible")){
+      if(event.which === 27 && $(".overlay").is(":visible")){
         closeContact();   
       }
     });
-    
-    setTimeout(function(){
-      $("#social").show().addClass("animated bounceInDown");
-    },200);
     
   });
 })();

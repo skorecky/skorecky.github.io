@@ -18,6 +18,7 @@ GEM
     rack-protection (1.5.2)
       rack
     raindrops (0.13.0)
+    ruby-hmac (0.4.0)
     sass (3.2.14)
     shotgun (0.9)
       rack (>= 1.0)
@@ -45,6 +46,7 @@ DEPENDENCIES
   haml
   pony
   rack-cache
+  ruby-hmac
   sass
   shotgun
   sinatra
