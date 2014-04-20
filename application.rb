@@ -2,6 +2,8 @@ require 'sinatra'
 require 'haml'
 require 'pony'
 require 'sinatra/flash'
+require 'json'
+require './health'
 require './keepalive'
 
 enable :sessions
@@ -9,6 +11,17 @@ enable :sessions
 get '/?' do
   cache_control :public, max_age: 3600
   haml :index
+end
+
+get '/health-data' do
+  cache_control :public, max_age: 3600
+  content_type :json
+  health_data
+end
+
+get '/health' do
+  # cache_control :public, max_age: 3600
+  haml :health
 end
 
 post '/send_message' do
