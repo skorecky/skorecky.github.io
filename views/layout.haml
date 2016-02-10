@@ -3,31 +3,11 @@
   %head
     %meta{content: 'text/html; charset=utf-8', :'http-equiv' => 'content-type'}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
-    %title Stephen Korecky - Designer &amp; Developer from Chicago
+    %title Stephen Korecky - Chicago
     %link{rel: "icon", type: "image/png", href: "/images/favicon.ico"}
     %link{href: '/stylesheets/reset.css', rel: 'stylesheet', type: 'text/css'}
-    %link{href: '/webfonts/ss-social.css', rel: 'stylesheet', type: 'text/css'}
-    %link{href: '/webfonts/ss-standard.css', rel: 'stylesheet', type: 'text/css'}
-    %link{href: '/stylesheets/animate.min.css', rel: 'stylesheet', type: 'text/css'}
     %link{href: '/stylesheets/application.css', rel: 'stylesheet', type: 'text/css'}
   %body
     #wrapper
-      = styled_flash
       = yield
-    .overlay
-      #contact
-        %a.ss-icon.cancel{herf: "/"} Close
-        %form{action: "/send_message", method: "post"}
-          %label Full Name
-          %input{type: "text", placeholder: "Your Name", name: "contact[name]"}
-          %label Email
-          %input{type: "email", placeholder: "Email Address", name: "contact[email]"}
-          %input{type: "phone", placeholder: "Phone", style: "display:none;", name: "contact[phone]"}
-          %label Message
-          %textarea{rows: 3, name: "contact[message]"}
-          .form-actions
-            %button.button.primary{type: "submit"} Send Message
-    %script{src: '/javascripts/jquery.js', type: 'text/javascript'} 
-    %script{src: '/javascripts/chart.min.js', type: 'text/javascript'}
-    %script{src: '/javascripts/application.js', type: 'text/javascript'}
     %script{src: '/javascripts/analytics.js', type: 'text/javascript'}

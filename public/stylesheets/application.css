@@ -24,49 +24,6 @@ a {
 
 /* Wrapper
 -------------------------*/
-
-.button {
-  border:none;
-  border-radius:25px;
-  color:rgba(255,255,255,0.9);
-  cursor:pointer;
-  font-size:14px;
-  padding:5px 10px;
-  text-align:center;
-  width:100%
-}
-
-.button.primary {
-  background:#69C535;
-  color: #FFF;
-}
-
-.button.primary:hover {
-  background: #539B29;
-  color:#FFF;
-}
-
-.flash {
-  box-shadow: 0 1px 2px  rgba(0,0,0,0.1);
-  color:#222;
-  font-size:16px;
-  font-weight:800;
-  left:0;
-  padding:10px 0;
-  position:absolute;
-  right:0;
-  text-align:center;
-  top:0;
-}
-
-.flash.error {
-  background:rgba(255,20,20,0.5);
-}
-
-.flash.notice {
-  background:rgba(255,255,255,0.5);
-}
-
 #me {
   margin:50px auto 0;
   width:465px;
@@ -74,7 +31,7 @@ a {
 
 #me h1 {
   color:rgba(255,255,255,0.9);
-  font-size:42px;
+  font-size:40px;
   font-weight:300;
   line-height:1.6;
   margin:40px 0 15px;
@@ -112,89 +69,6 @@ a {
   max-width:100%;
 }
 
-#me #social {
-  margin:50px auto 0;
-  position:relative;
-  width:228px;
-  z-index:1;
-}
-
-#me #social li {
-  float:left;
-  width:25%;
-}
-
-#me #social li a {
-  transition: all .5s;
-  -moz-transition: all .5s;
-  -webkit-transition: all .5s;
-  -o-transition: all .5s;
-  color:rgba(255,255,255,0.5);
-  font-size:24px;
-}
-
-#me #social li a:hover {
-  color:rgba(255,255,255,1);
-}
-
-#contact {
-  background:rgba(255,255,255,0.8);
-  border-radius:3px;
-  left:50%;
-  margin:0 0 0 -128px;
-  position:absolute;
-  top:-250px;
-  width:256px;
-  z-index:4;
-}
-
-#contact a.cancel {
-  color:rgba(0,0,0,0.4);
-  cursor:pointer;
-  display:inline-block;
-  font-size:14px;
-  margin:10px 0 -15px 10px;
-  text-shadow:0 1px 0 rgba(255,255,255,1);
-}
-
-#contact form {
-  display:block;
-  margin:10px;
-}
-
-#contact form label {
-  color:rgba(0,0,0,0.5);
-  display:block;
-  font-size:14px;
-  font-weight:bold;
-  padding:5px 0;
-}
-
-#contact form input,
-#contact form textarea {
-  background:rgba(255,255,255,0.5);
-  border:1px solid rgba(0,0,0,0.15);
-  border-radius:3px;
-  font-size:14px;
-  padding:5px;
-  width:226px;
-}
-
-#contact form .form-actions {
-  padding:5px 0 0;
-}
-
-.overlay {
-  background:rgba(0,0,0,0.8);
-  bottom:0;
-  display:none;
-  left:0;
-  position:absolute;
-  right:0;
-  top:0;
-  z-index:3;
-}
-
 @media (max-device-width: 480px) {
   body {
     min-height:480px;
@@ -202,41 +76,4 @@ a {
   #me h1 {
     margin:10px 0;
   }
-}
-
-
-#health_dashboard {
-  margin:0 auto;
-  width:960px;
-}
-
-#health_dashboard canvas {
-}
-
-#health_dashboard #id {
-  border-bottom:1px solid rgba(255,255,255,0.1);
-  margin:0 0 10px;
-  overflow:hidden;
-  padding:10px 0;
-}
-
-#health_dashboard #id img {
-  border:2px solid rgba(255,255,255,1);
-  border-radius:50%;
-  display:block;
-  float:left;
-  width:50px;
-}
-
-#health_dashboard #id h1 {
-  font-size:24px;
-  float:left;
-  line-height:1;
-  margin:5px 0 0 10px;
-}
-
-#health_dashboard #id h1 small {
-  display:block;
-  font-size:50%;
-  line-height:2;
 }

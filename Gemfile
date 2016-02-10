@@ -1,12 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.2.1'
 
 gem 'bundler'
 gem 'sinatra'
 gem 'haml'
 gem 'sass'
-gem 'pony'
-gem 'sinatra-flash'
 gem 'unicorn'
 gem 'dalli'
 gem 'rack-cache'
