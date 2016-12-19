@@ -26,12 +26,12 @@ a {
 -------------------------*/
 #me {
   margin:50px auto 0;
-  width:465px;
+  width:100%;
 }
 
 #me h1 {
   color:rgba(255,255,255,0.9);
-  font-size:40px;
+  font-size:42px;
   font-weight:300;
   line-height:1.6;
   margin:40px 0 15px;
@@ -45,6 +45,7 @@ a {
 #me p {
   font-size:14px;
   font-weight:400;
+  text-align: center;
   margin:0 0 15px;
 }
 
