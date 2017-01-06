@@ -5,12 +5,9 @@ html {
 }
 
 body {
-  background-color:#B5E655;
-  background-image: -o-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
-  background-image: -moz-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
-  background-image: -webkit-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
-  background-image: -ms-linear-gradient(-45deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
-  background-image: linear-gradient(-135deg, #2638AD 0%, #43A7FD 0%, #B5E655 100%);
+  background-color:#111;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
 	color:#FFF;
 	font:62.5%/1.5 "Open Sans", Helvetica, sans-serif;
   height:100%;
@@ -25,21 +22,31 @@ a {
 /* Wrapper
 -------------------------*/
 #me {
-  margin:50px auto 0;
-  width:100%;
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+  margin:100px auto 0;
+  padding: 50px 0;
+  width:500px;
 }
 
 #me h1 {
   color:rgba(255,255,255,0.9);
-  font-size:42px;
+  font-size:46px;
   font-weight:300;
-  line-height:1.6;
+  line-height:1.2;
   margin:40px 0 15px;
   text-align:center;
 }
 
 #me h1 strong {
   font-weight:600;
+}
+
+#me h2 {
+  font-size:32px;
+  font-weight:200;
+  text-align: center;
+  margin:0 0 15px;
 }
 
 #me p {
@@ -51,7 +58,7 @@ a {
 
 #me p a {
   font-weight:400;
-  text-decoration:underline;
+  text-decoration:none;
 }
 
 #me #portrait {
@@ -60,7 +67,7 @@ a {
   border-radius:50%;
   margin:0 auto;
   position:relative;
-  width:256px;
+  width:150px;
   z-index:2;
 }
 
