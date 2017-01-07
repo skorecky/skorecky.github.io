@@ -22,8 +22,9 @@ a {
 /* Wrapper
 -------------------------*/
 #me {
-  background: rgba(0,0,0,0.25);
-  border-radius: 10px;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   margin:100px auto 0;
   padding: 50px 0;
   width:500px;
@@ -32,28 +33,27 @@ a {
 #me h1 {
   color:rgba(255,255,255,0.9);
   font-size:46px;
-  font-weight:300;
+  font-weight:700;
   line-height:1.2;
   margin:40px 0 15px;
   text-align:center;
-}
-
-#me h1 strong {
-  font-weight:600;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
 }
 
 #me h2 {
-  font-size:32px;
+  font-size:30px;
   font-weight:200;
   text-align: center;
   margin:0 0 15px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
 }
 
 #me p {
-  font-size:14px;
+  font-size:16px;
   font-weight:400;
   text-align: center;
   margin:0 0 15px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
 }
 
 #me p a {
@@ -77,11 +77,39 @@ a {
   max-width:100%;
 }
 
-@media (max-device-width: 480px) {
-  body {
-    min-height:480px;
+.mobile-only {
+  display: none;
+}
+
+.not-mobile {
+  display: block;
+}
+
+@media (max-width: 568px) {
+  #me {
+    background: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 20px 0;
+    width:100%;
   }
+
   #me h1 {
+    font-size: 42px;
     margin:10px 0;
+  }
+
+  #me h2 {
+    font-size: 28px;
+  }
+
+  #me p {
+    font-size: 24px;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .not-mobile {
+    display: none;
   }
 }
