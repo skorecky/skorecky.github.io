@@ -20,13 +20,24 @@ a {
 	text-decoration:none;
 }
 
+footer {
+  margin: 20px 0 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+footer img {
+  display: inline-block;
+  margin: 0 25px;
+}
+
 /* Wrapper
 -------------------------*/
 #me {
   background: rgba(0,0,0,0.4);
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  margin:100px auto 0;
+  margin:80px auto 0;
   padding: 50px 0;
   width:500px;
 }
