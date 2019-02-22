@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:200,400,300,700,600);
 
 html {
   height:100%
@@ -6,13 +6,9 @@ html {
 
 body {
   background-color:#111;
-  background-image: url("/images/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 	color:#FFF;
 	font:62.5%/1.5 "Open Sans", Helvetica, sans-serif;
   height:100%;
-  overflow:hidden;
 }
 
 a {
@@ -20,26 +16,25 @@ a {
 	text-decoration:none;
 }
 
-footer {
-  margin: 20px 0 10px;
-  padding: 10px 0;
-  text-align: center;
-}
-
-footer img {
-  display: inline-block;
-  margin: 0 25px;
-}
-
 /* Wrapper
 -------------------------*/
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 #me {
   background: rgba(0,0,0,0.4);
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  margin:80px auto 0;
-  padding: 50px 0;
-  width:500px;
+  bottom: 0;
+  left: 0;
+  padding: 100px 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
 }
 
 #me h1 {
@@ -89,14 +84,6 @@ footer img {
   max-width:100%;
 }
 
-.mobile-only {
-  display: none;
-}
-
-.not-mobile {
-  display: block;
-}
-
 @media (max-width: 568px) {
   #me {
     background: none;
@@ -117,11 +104,5 @@ footer img {
 
   #me p {
     font-size: 24px;
-  }
-  .mobile-only {
-    display: block;
-  }
-  .not-mobile {
-    display: none;
   }
 }
