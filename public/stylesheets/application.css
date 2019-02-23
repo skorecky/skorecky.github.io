@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:200,400,300,700,600);
+@import url('https://fonts.googleapis.com/css?family=Carter+One');
 
 html {
   height:100%
@@ -26,83 +27,118 @@ video {
   min-height: 100%;
 }
 
-#me {
-  background: rgba(0,0,0,0.4);
-  bottom: 0;
+.backstage_pass {
+  background: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 0 1px rgba(255,255,255, 0.8);
   left: 0;
-  padding: 100px 0;
-  position: fixed;
+  margin: 0 auto;
+  padding: 50px 0 0;
+  position: absolute;
   right: 0;
-  top: 0;
+  top: 50px;
+  width: 350px;
   z-index: 1;
 }
 
-#me h1 {
-  color:rgba(255,255,255,0.9);
-  font-size:46px;
-  font-weight:700;
-  line-height:1.2;
-  margin:40px 0 15px;
-  text-align:center;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+.backstage_pass .tab {
+  background: rgba(0, 0, 0, 0.3);
+  border:1px solid rgba(255,255,255,0.8);
+  border-radius:5px;
+  left: 50%;
+  margin: 0 auto 0 -20px;
+  padding: 2px;
+  position: absolute;
+  right: auto;
+  top: 20px;
+  width: 40px;
 }
 
-#me h2 {
-  font-size:30px;
-  font-weight:200;
+.backstage_pass .ribbon {
+  position: absolute;
+  left: -1px; top: -1px;
+  z-index: 1;
+  overflow: hidden;
+  width: 100px; height: 100px;
+  text-align: right;
+}
+
+.backstage_pass .ribbon span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
   text-align: center;
-  margin:0 0 15px;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 125px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#F70505 0%, #8F0808 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 28px; left: -25px;
 }
 
-#me p {
-  font-size:16px;
-  font-weight:400;
-  text-align: center;
-  margin:0 0 15px;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
-}
-
-#me p a {
-  font-weight:400;
-  text-decoration:none;
-}
-
-#me #portrait {
+.backstage_pass #portrait {
   background:rgba(0,0,0,0.8);
-  border:5px solid rgba(255,255,255,1);
-  border-radius:50%;
+  border:2px solid rgba(255,255,255,1);
+  border-radius:5px;
   margin:0 auto;
   position:relative;
-  width:150px;
+  width:250px;
   z-index:2;
 }
 
-#me #portrait img {
-  border-radius:50%;
+.backstage_pass #portrait img {
+  border-radius:4px;
   display:block;
   max-width:100%;
 }
 
+.backstage_pass .info {
+  background: #B60000;
+  background: linear-gradient(#B60000 0%, #B60000 100%);
+  border-radius: 0 0 5px 5px;
+  margin: 40px 0 0;
+  padding: 20px 0;
+}
+
+.backstage_pass h1 {
+  color:rgba(255,255,255,0.9);
+  font-family: 'Carter One', cursive;
+  font-size:36px;
+  font-weight:700;
+  line-height:1.2;
+  margin:0 0 15px;
+  text-align:center;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.8);
+}
+
+.backstage_pass h2 {
+  background: rgba(0, 0, 0, 0.5);
+  font-size:30px;
+  font-weight:200;
+  text-align: center;
+  margin:0 0 15px;
+  padding: 10px 0;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+.backstage_pass p {
+  font-size:16px;
+  font-weight:400;
+  text-align: center;
+  margin:0;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+.backstage_pass p a {
+  font-weight:400;
+  text-decoration:none;
+}
+
 @media (max-width: 568px) {
-  #me {
-    background: none;
-    border-radius: 0px;
-    box-shadow: none;
-    padding: 20px 0;
-    width:100%;
-  }
-
-  #me h1 {
-    font-size: 42px;
-    margin:10px 0;
-  }
-
-  #me h2 {
-    font-size: 28px;
-  }
-
-  #me p {
-    font-size: 24px;
-  }
 }
