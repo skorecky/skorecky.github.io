@@ -140,5 +140,14 @@ video {
   text-decoration:none;
 }
 
+.backstage_pass .creditals {
+  height: 100px;
+  right: -35px;
+  position: absolute;
+  top: -35px;
+  z-index: 5;
+  width: 100px;
+}
+
 @media (max-width: 568px) {
 }
