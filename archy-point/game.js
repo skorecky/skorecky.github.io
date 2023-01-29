@@ -2,9 +2,9 @@ Array.prototype.random = function () {
   return this[Math.floor((Math.random()*this.length))];
 }
 
-var MAXSHAPESIZE = 300
-var aHeight = (window.screen.availHeight - MAXSHAPESIZE);
-var aWidth = (window.screen.availWidth - MAXSHAPESIZE);
+var MAXSHAPESIZE = 200
+var aHeight = (window.screen.height - MAXSHAPESIZE);
+var aWidth = (window.screen.width - MAXSHAPESIZE);
 var shape = document.getElementById("shape");
 var shapes = ["square","circle","star","oct"];
 var colors = ["red","green","blue","black"];
