@@ -153,6 +153,7 @@ video {
 .resume {
   font-size: 1rem;
   margin: 5rem auto;
+  padding: 0 0 5rem;
   width: 50rem;
 }
 
