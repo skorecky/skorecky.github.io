@@ -32,6 +32,7 @@
       }
 
       var checkTime = function() {
+        console.log("checked")
         if(isLunch()){
           document.querySelector("span.is").style.display = "block"
           document.querySelector("span.not").style.display = "none"
@@ -42,6 +43,7 @@
       };
 
       checkTime();
+      setInterval(checkTime, 60000);
     </script>
   </body>
 </html>
