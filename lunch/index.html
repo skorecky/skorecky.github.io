@@ -6,33 +6,54 @@
     <style media="all">
       body {
         background:#222;
-      }
-
-      span {
         color:#FFF;
+        font:800%/1.5 "Open Sans", Helvetica, sans-serif;
+        margin:10% 0 0;
+      }
+      h1 {
+        font-size: 5rem;
+
+        text-align:center;
+      }
+      span {
         display:none;
-      	font:800%/1.5 "Open Sans", Helvetica, sans-serif;
-        height:100%;
-        margin:20% 0 0;
         text-align:center;
       }
     </style>
   </head>
   <body>
+    <h1 class="countdown"></h1>
     <span class="is">LUNCH TIME</span>
     <span class="not">NOT LUNCH TIME</span>
     <script type="text/javascript">
-      var start =  12;
-      var end   =  13;
 
       var isLunch = function() {
+        var start =  12;
+        var end   =  13;
         var now = new Date();
         var time = now.getHours();
         return time >= start && time < end;
       }
 
+      var countdown = function() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var rhours = 12 - hours;
+        var rminutes = 60 - minutes;
+        var rseconds = 60 - seconds;
+        var txt = rhours+":"+rminutes+":"+rseconds;
+        // console.log(txt);
+        // If after lunch, do something
+        if(hours >= 12) {
+          document.querySelector(".countdown").innerText = "00:00:00";
+        } else {
+          document.querySelector(".countdown").innerText = txt;
+        }
+      }
+
       var checkTime = function() {
-        console.log("checked")
         if(isLunch()){
           document.querySelector("span.is").style.display = "block"
           document.querySelector("span.not").style.display = "none"
@@ -42,8 +63,14 @@
         }
       };
 
-      checkTime();
-      setInterval(checkTime, 60000);
+      var intervalCheck = function(){
+        countdown();
+        checkTime();
+      }
+      // 1 Minute = 60000
+      // 1 Second = 1000
+      intervalCheck();
+      setInterval(intervalCheck, 1000);
     </script>
   </body>
 </html>
