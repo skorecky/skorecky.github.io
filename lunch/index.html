@@ -27,6 +27,10 @@
     <span class="not">NOT LUNCH TIME</span>
     <script type="text/javascript">
 
+      var pad = function(n) {
+        return (n < 10) ? ("0" + n) : n;
+      }
+
       var isLunch = function() {
         var start =  12;
         var end   =  13;
@@ -43,7 +47,7 @@
         var rhours = 12 - hours;
         var rminutes = 60 - minutes;
         var rseconds = 60 - seconds;
-        var txt = rhours+":"+rminutes+":"+rseconds;
+        var txt = pad(rhours)+":"+pad(rminutes)+":"+pad(rseconds);
         // console.log(txt);
         // If after lunch, do something
         if(hours >= 12) {
