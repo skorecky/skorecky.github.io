@@ -12,16 +12,16 @@
       }
       h1 {
         font-size: 5rem;
-        display: none;
         text-align:center;
       }
-      span {
-        display:none;
+      .lunch-text {
+        font-size: 8rem;
+        margin: 0;
         text-align:center;
       }
       .meter {
         box-sizing: content-box;
-        height: 20px; /* Can be anything */
+        height: 20px;
         position: relative;
         margin:0 10%;
         background: #555;
@@ -96,14 +96,16 @@
       .nostripes > span::after {
         background-image: none;
       }
+
+      .countdown { display: none; }
+      .meter { display: block; }
     </style>
   </head>
   <body>
     <h1 class="countdown"></h1>
-    <span class="is">LUNCH TIME</span>
-    <span class="not">NOT LUNCH TIME</span>
+    <h2 class="lunch-text">LUNCH TIME</h2>
     <div class="meter">
-      <span class="progress-bar" style="width: 25%;"></span>
+      <span class="progress-bar"></span>
     </div>
     <script type="text/javascript">
 
@@ -111,33 +113,35 @@
         return (n < 10) ? ("0" + n) : n;
       }
 
-      var isLunch = function() {
+      var isLunch = function(date) {
         var start =  12;
         var end   =  13;
-        var now = new Date();
-        var time = now.getHours();
+        var time = date.getHours();
         return time >= start && time < end;
       }
 
-      var countdown = function() {
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
+      var countdown = function(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
         var rhours = 11 - hours;
         var rminutes = 60 - minutes;
         var rseconds = 60 - seconds;
         var txt = pad(rhours)+":"+pad(rminutes)+":"+pad(rseconds);
-        // console.log(txt);
-        // If after lunch, do something
-        var progress = timeToProgress(hours);
-        console.log(progress);
         if(hours >= 12) {
           document.querySelector(".countdown").innerText = "00:00:00";
+        } else {
+          document.querySelector(".countdown").innerText = txt;
+        }
+      }
+
+      var progressBar = function(date) {
+        var hours = date.getHours();
+        var progress = timeToProgress(hours);
+        if(hours >= 12) {
           document.querySelector(".progress-bar").style.width = "100%"
           document.querySelector(".meter").classList.add("nostripes")
         } else {
-          document.querySelector(".countdown").innerText = txt;
           document.querySelector(".progress-bar").style.width = progress
           document.querySelector(".meter").classList.remove("nostripes")
         }
@@ -146,67 +150,67 @@
       var timeToProgress = function(hour){
         switch (hour) {
           case 1:
-            return "5%"
+            return "10%"
             break;
           case 2:
             return "10%"
             break;
           case 3:
-            return "20%"
+            return "10%"
             break;
           case 4:
-            return "30%"
+            return "10%"
             break;
           case 5:
-            return "40%"
+            return "10%"
             break;
           case 6:
-            return "50%"
+            return "10%"
             break;
           case 7:
-            return "60%"
+            return "10%"
             break;
           case 8:
-            return "70%"
+            return "10%"
             break;
           case 9:
-            return "80%"
+            return "10%"
             break;
           case 10:
-            return "90%"
+            return "25%"
             break;
           case 11:
-            return "95%"
+            return "80%"
             break;
           case 12:
             return "100%"
             break;
           default:
-            console.log("timeToProgress error" + hour);
+            return "100%"
         }
       }
 
-      var checkTime = function() {
-        if(isLunch()){
-          document.querySelector("span.is").style.display = "block"
-          document.querySelector("span.not").style.display = "none"
-          // document.querySelector(".progress-bar").style.width = "100%"
-          // document.querySelector(".meter").classList.add("nostripes")
+      var lunchDisplay = function(date) {
+        var el = document.querySelector(".lunch-text");
+        if(isLunch(date)){
+          el.innerText = "LUNCH TIME";
+        } else if(true) {
+          el.innerText = "BACK TO WORK";
         } else {
-          document.querySelector("span.is").style.display = "none"
-          document.querySelector("span.not").style.display = "block"
-          // document.querySelector(".meter").classList.remove("nostripes")
+          el.innerText = "NOT LUNCH TIME";
         }
       };
 
-      var intervalCheck = function(){
-        countdown();
-        checkTime();
+      var check = function(){
+        date = new Date();
+        // countdown(date);
+        lunchDisplay(date);
+        progressBar(date);
       }
       // 1 Minute = 60000
       // 1 Second = 1000
-      intervalCheck();
-      setInterval(intervalCheck, 1000);
+      check();
+      setInterval(check, 1000);
     </script>
   </body>
 </html>
