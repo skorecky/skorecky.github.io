@@ -14,7 +14,7 @@
         font-size: 5rem;
         text-align:center;
       }
-      .lunch-text {
+      .message {
         font-size: 8rem;
         margin: 0;
         text-align:center;
@@ -103,7 +103,7 @@
   </head>
   <body>
     <h1 class="countdown"></h1>
-    <h2 class="lunch-text">LUNCH TIME</h2>
+    <h2 class="message">LUNCH TIME</h2>
     <div class="meter">
       <span class="progress-bar"></span>
     </div>
@@ -111,13 +111,6 @@
 
       var pad = function(n) {
         return (n < 10) ? ("0" + n) : n;
-      }
-
-      var isLunch = function(date) {
-        var start =  12;
-        var end   =  13;
-        var time = date.getHours();
-        return time >= start && time < end;
       }
 
       var countdown = function(date) {
@@ -145,6 +138,16 @@
           document.querySelector(".progress-bar").style.width = progress
           document.querySelector(".meter").classList.remove("nostripes")
         }
+      }
+
+      var getMessage = function(date){
+        var hour = date.getHours();
+        var msg = ""
+        if(hour < 12){ msg = "NOT LUNCH TIME" };
+        if(hour == 12){ msg = "LUNCH TIME" };
+        if(hour > 12){ msg = "BACK TO WORK" };
+        if(hour >= 17){ msg = "GO HOME" };
+        return msg;
       }
 
       var timeToProgress = function(hour){
@@ -191,18 +194,14 @@
       }
 
       var lunchDisplay = function(date) {
-        var el = document.querySelector(".lunch-text");
-        if(isLunch(date)){
-          el.innerText = "LUNCH TIME";
-        } else if(true) {
-          el.innerText = "BACK TO WORK";
-        } else {
-          el.innerText = "NOT LUNCH TIME";
-        }
+        var el = document.querySelector(".message");
+        el.innerText = getMessage(date);
       };
 
       var check = function(){
         date = new Date();
+        // Test Hours Here
+        // date.setHours(16);
         // countdown(date);
         lunchDisplay(date);
         progressBar(date);
