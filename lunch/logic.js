@@ -87,24 +87,50 @@ var lunchDisplay = function(date) {
   el.innerText = getMessage(date);
 };
 
-var check = function(){
-  date = new Date();
-  // Test Hours Here
-  // date.setHours(16);
-  // countdown(date);
-  lunchDisplay(date);
-  progressBar(date);
+var toggleElementView = function(el) {
+  console.log(el);
+  if(el.style.display === "none" || el.style.display === "") {
+    el.style.display = "block";
+  } else {
+    el.style.display = "none";
+  }
 }
 
-document.querySelector(".toggle-options").addEventListener("click", function(event){
+
+document.querySelector(".toggle-options").onclick = function(event){
   event.preventDefault();
   var options = document.querySelector("#options");
-  if(options.style.display == "none") {
+  if(options.style.display === "none" || options.style.display === "") {
     options.style.display = "block";
   } else {
     options.style.display = "none";
   }
-});
+};
+
+document.querySelector(".toggle-countdown").onclick = function(event){
+  console.log(event)
+  event.preventDefault();
+  toggleElementView(document.querySelector(".countdown"));
+}
+
+document.querySelector(".toggle-message").onclick = function(event){
+  event.preventDefault();
+  toggleElementView(document.querySelector(".message"));
+}
+
+document.querySelector(".toggle-progress").onclick = function(event){
+  event.preventDefault();
+  toggleElementView(document.querySelector(".meter"));
+}
+
+var check = function(){
+  date = new Date();
+  // Test Hours Here
+  // date.setHours(16);
+  countdown(date);
+  lunchDisplay(date);
+  progressBar(date);
+}
 
 check();
 
