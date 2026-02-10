@@ -88,7 +88,6 @@ var lunchDisplay = function(date) {
 };
 
 var toggleElementView = function(el) {
-  console.log(el);
   if(el.style.display === "none" || el.style.display === "") {
     el.style.display = "block";
   } else {
@@ -96,6 +95,16 @@ var toggleElementView = function(el) {
   }
 }
 
+var setCustomMessage = function(value) {
+  var el = document.querySelector(".message");
+  el.innerText = value;
+};
+
+
+document.querySelector(".message").onclick = function(event){
+  // turn text into input
+  // capture return event to do setCustomMessage
+}
 
 document.querySelector(".toggle-options").onclick = function(event){
   event.preventDefault();
