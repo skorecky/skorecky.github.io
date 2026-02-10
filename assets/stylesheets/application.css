@@ -192,6 +192,10 @@ video {
   padding: 0.25rem;
 }
 
+.resume p {
+  margin-bottom: 1.5rem;
+}
+
 .resume ul li {
   margin: 0 0 0.5rem;
 }
