@@ -1,14 +1,16 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:200,400,300,700,600");
-@import url("https://fonts.googleapis.com/css?family=Carter+One");
-
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 html {
   height:100%
 }
 
 body {
   background-color:#111;
+  background-image: url("/assets/images/background.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 	color:#FFF;
-	font:62.5%/1.5 "Open Sans", Helvetica, sans-serif;
+	font:62.5%/1.5 "Google Sans", Helvetica, sans-serif;
   height:100%;
 }
 
@@ -19,20 +21,16 @@ a {
 
 /* Wrapper
 -------------------------*/
-video {
-  position: fixed;
-  left: 0;
-  top: -25%;
-  /* bottom: 0; */
-  min-width: 100%;
-  min-height: 100%;
-}
-
 .backstage_pass {
   background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(5px);
+
+  /* Optional: standard vendor prefix for older Safari versions */
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-  box-shadow: 0 0 0 1px rgba(255,255,255, 0.8);
+  /* box-shadow: 0 0 0 5px rgba(255,255,255, 1); */
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 1);
+  border:1px solid #FFF;
   left: 0;
   margin: 0 auto;
   padding: 50px 0 0;
@@ -43,50 +41,10 @@ video {
   z-index: 1;
 }
 
-.backstage_pass .tab {
-  background: rgba(0, 0, 0, 0.3);
-  border:1px solid rgba(255,255,255,0.8);
-  border-radius:5px;
-  left: 50%;
-  margin: 0 auto 0 -20px;
-  padding: 2px;
-  position: absolute;
-  right: auto;
-  top: 20px;
-  width: 40px;
-}
-
-.backstage_pass .ribbon {
-  position: absolute;
-  left: -1px; top: -1px;
-  z-index: 1;
-  overflow: hidden;
-  width: 100px; height: 100px;
-  text-align: right;
-}
-
-.backstage_pass .ribbon span {
-  font-size: 14px;
-  font-weight: bold;
-  color: #FFF;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 20px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  width: 125px;
-  display: block;
-  background: #79A70A;
-  background: linear-gradient(#F70505 0%, #8F0808 100%);
-  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-  position: absolute;
-  top: 28px; left: -25px;
-}
-
 .backstage_pass #portrait {
   background:rgba(0,0,0,0.8);
   border:2px solid rgba(255,255,255,1);
-  border-radius:5px;
+  border-radius:50%;
   margin:0 auto;
   position:relative;
   width:250px;
@@ -94,14 +52,12 @@ video {
 }
 
 .backstage_pass #portrait img {
-  border-radius:4px;
+  border-radius:50%;
   display:block;
   max-width:100%;
 }
 
 .backstage_pass .info {
-  background: #B60000;
-  background: linear-gradient(#B60000 0%, #B60000 100%);
   border-radius: 0 0 5px 5px;
   margin: 40px 0 0;
   padding: 20px 0;
@@ -109,18 +65,17 @@ video {
 
 .backstage_pass h1 {
   color:rgba(255,255,255,0.9);
-  font-family: 'Carter One', cursive;
+  font-weight: 700;
   font-size:36px;
-  font-weight:700;
   line-height:1.2;
   margin:0 0 15px;
   text-align:center;
-  text-shadow: 2px 2px 0 rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .backstage_pass h2 {
   background: rgba(0, 0, 0, 0.5);
-  font-size:30px;
+  font-size:25px;
   font-weight:200;
   text-align: center;
   margin:0 0 15px;

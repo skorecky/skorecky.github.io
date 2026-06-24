@@ -182,21 +182,17 @@
         }
 
         function stopTone() {
-            if (currentOsc) {
-                currentOsc.stop();
-                currentOsc = null;
-            }
-            if (timeoutId) {
-                clearTimeout(timeoutId);
-                timeoutId = null;
-            }
+            if (currentOsc) currentOsc.stop();
+            if (timeoutId) clearTimeout(timeoutId);
+            currentOsc = null;
+            timeoutId = null;
             isPlaying = false;
             playBtn.textContent = '▶ PLAY TONE (3s)';
             playBtn.classList.remove('stop');
         }
 
-        function playTone() {
-            stopTone(); // stop any previous
+        function playTone(autoStop = true) {
+            stopTone();
 
             currentOsc = audioContext.createOscillator();
             currentGain = audioContext.createGain();
@@ -213,13 +209,14 @@
             playBtn.textContent = '■ STOP';
             playBtn.classList.add('stop');
 
-            // Auto-stop after 3 seconds
-            timeoutId = setTimeout(() => {
-                stopTone();
-            }, 3000);
+            if (autoStop) {
+                timeoutId = setTimeout(() => {
+                    stopTone();
+                }, 3000);
+            }
         }
 
-        function generateNewTone() {
+        function generateNewTone(autoPlay = true) {
             const index = Math.floor(Math.random() * oneThirdOctave.length);
             currentFreq = oneThirdOctave[index];
 
@@ -227,12 +224,17 @@
             nextBtn.style.display = 'none';
             submitBtn.disabled = false;
 
-            // Reset slider to neutral position (around 1kHz area)
+            // Reset slider to neutral middle position
             guessSlider.max = oneThirdOctave.length - 1;
-            guessSlider.value = Math.floor(oneThirdOctave.length / 2); // middle of range
+            guessSlider.value = Math.floor(oneThirdOctave.length / 2);
             updateGuessDisplay();
 
-            stopTone(); // ensure nothing is playing
+            stopTone();
+
+            if (autoPlay) {
+                // Small delay so UI updates first
+                setTimeout(() => playTone(), 50);
+            }
         }
 
         function updateGuessDisplay() {
@@ -261,7 +263,7 @@
             if (isPlaying) {
                 stopTone();
             } else {
-                playTone();
+                playTone(false); // manual play does not auto-stop
             }
         });
 
@@ -285,25 +287,25 @@
 
             submitBtn.disabled = true;
             nextBtn.style.display = 'block';
-            stopTone(); // stop tone after submitting
+            stopTone();
         });
 
-        nextBtn.addEventListener('click', generateNewTone);
+        nextBtn.addEventListener('click', () => generateNewTone(true));
 
         volumeSlider.addEventListener('input', () => {
             if (currentGain) currentGain.gain.value = parseFloat(volumeSlider.value);
         });
 
-        // Init
+        // Initialize
         updateStats();
-        generateNewTone();
+        generateNewTone(true); // start with first auto-play
 
         // Keyboard support
         document.addEventListener('keydown', e => {
             if (e.key === ' ' && document.activeElement.tagName !== "INPUT") {
                 e.preventDefault();
                 if (isPlaying) stopTone();
-                else playTone();
+                else playTone(false);
             }
             if (e.key === 'Enter' && !submitBtn.disabled) submitBtn.click();
         });
